@@ -1,76 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography." />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="theme-color" content="#1266F1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ocean Facts" />
+    <meta property="og:description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ocean Fact" />
+    <meta name="twitter:description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography." />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="icon" href="/OceanFacts.svg" type="image/svg" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Ocean Facts API - The limitless and free ocean facts database.</title>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography.">
-	<meta name="robots" content="index, follow">
-	<meta name="rating" content="general">
-	<meta name="theme-color" content="#1266F1">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Ocean Facts">
-	<meta property="og:description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography.">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Ocean Fact">
-	<meta name="twitter:description" content="Ocean Facts is a limitless and free JSON API for a large collection of interesting curated facts related to the field of Oceanography.">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="icon" href="/OceanFacts.svg" type="image/svg">
-	<link href="style.css" rel="stylesheet">
-	<title>Ocean Facts API - The limitless and free ocean facts database.</title>
-</head>
-
-<body class="fs-5">
-	<div class="container col-9 col-md-6">
-		<div class="text-center pt-5 pb-5">
-			<h1 class="text-primary display-1 header">Ocean Facts</h1> 
+  <body class="fs-5">
+    <div class="container col-9 col-md-6">
+      <div class="text-center pt-5 pb-5">
+        <h1 class="text-primary display-1 header">Ocean Facts</h1>
+      </div>
+      <section>
+        <div class="mb-3 text-center">
+          <img alt="Depfu" src="https://img.shields.io/depfu/willuhm-js/OceanFacts?color=blue&style=for-the-badge" class="mb-1" />
+          <a href="https://github.com/willuhm-js/OceanFacts/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/willuhm-js/OceanFacts?logoColor=black&style=for-the-badge&color=blue" class="mb-1" /></a>
+          <!--<a href="https://github.com/willuhm-js/OceanFacts/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1"></a>-->
+          <a href="https://github.com/willuhm-js/OceanFacts/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1" /></a>
+          <a href="https://github.com/willuhm-js/OceanFacts/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1" /></a>
+        </div>
+        <p>
+          <span class="fw-bold text-decoration-underline">Ocean Facts</span> is a limitless and free JSON API for a large collection of interesting curated facts related to the field of oceanography.
+          <a href="#!" class="text-reset infoToggle">Read more</a>
+        </p>
+        <div class="infoText d-none">
+          <p>This application provides free access to hundreds of facts about the ocean. Facts can be viewed either through this website or the provided API. To see a random fact, click the button.</p>
+        </div>
+        <div>
+          <a href="/fact/random" class="btn btn-outline-primary"><i class="fas fa-random"></i> Random Fact</a>
+        </div>
+      </section>
+      <section>
+        <h3 class="text-primary fs-1 mt-5 mb-3">Usage</h3>
+        <div>
+          <p class="lh-lg">Retrieve a random fact:</p>
+          <pre class="border p-2 request"><a class="text-reset" href="/api/random/">/api/random/</a></pre>
+        </div>
+        <div>
+          <p class="lh-lg">Retrieve a random fact by category:</p>
+          <pre class="border p-2 request"><a class="text-reset" href="/api/random/category/:category">/api/random/category/:category</a></pre>
+        </div>
+        <div>
+          <p class="lh-lg">Search for a fact by free text query:</p>
+          <pre class="border p-2 request"><a class="text-reset" href="/api/search/query/:query">/api/search/query/:query</a></pre>
+        </div>
+        <div>
+          <p class="lh-lg">Search for a fact by ID:</p>
+          <pre class="border p-2 request"><a class="text-reset" href="/api/search/query/:id">/api/search/id/:id</a></pre>
+        </div>
+      </section>
+      <section>
+        <h3 class="text-primary fs-1 mt-5 mb-3">Example Response</h3>
+        <div><pre class="border p-2"><%= randomFact %></pre></div>
+      </section>
+      <br />
+      <footer>
+        <div class="container pt-5 pb-5">
+          <div class="text-center p-3"><img src="/OceanFactsPixel.png" class="footerImg" /></div>
+          <small>
+            <p>
+              <span class="fw-bold">Disclaimer: </span>While most information from this website comes from scientific, academic, and government sources, this website and its creator(s) are not legally responsible for the truthfulness and
+              reliability of the information on this website.
+            </p>
+          </small>
+        </div>
+      </footer>
+      <br />
     </div>
-		<section>
-      <div class="mb-3 text-center">
-        <img alt="Depfu" src="https://img.shields.io/depfu/willuhm-js/OceanFacts?color=blue&style=for-the-badge" class="mb-1">
-        <a href="https://github.com/willuhm-js/OceanFacts/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/willuhm-js/OceanFacts?logoColor=black&style=for-the-badge&color=blue" class="mb-1"></a>
-        <!--<a href="https://github.com/willuhm-js/OceanFacts/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1"></a>-->
-        <a href="https://github.com/willuhm-js/OceanFacts/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1"></a>
-        <a href="https://github.com/willuhm-js/OceanFacts/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/willuhm-js/OceanFacts?style=for-the-badge&color=blue" class="mb-1"></a>
-      </div>
-			<p><span class="fw-bold text-decoration-underline">Ocean Facts</span> is a limitless and free JSON API for a large collection of interesting curated facts related to the field of oceanography. <a href="#!" class="text-reset infoToggle">Read more</a></p>
-			<div class="infoText d-none">
-				<p>This application provides free access to hundreds of facts about the ocean. Facts can be viewed either through this website or the provided API. To see a random fact, click the button.</p>
-			</div>
-			<div> 
-        <a href="/fact/random" class="btn btn-outline-primary"><i class="fas fa-random"></i> Random Fact</a> 
-      </div>
-		</section>
-		<section>
-			<h3 class="text-primary fs-1 mt-5 mb-3">Usage</h3>
-			<div>
-				<p class="lh-lg">Retrieve a random fact:</p> <pre class="border p-2 request"><a class="text-reset" href="/api/random/">/api/random/</a></pre> </div>
-			<div>
-				<p class="lh-lg">Retrieve a random fact by category:</p> <pre class="border p-2 request"><a class="text-reset" href="/api/random/category/:category">/api/random/category/:category</a></pre> </div>
-			<div>
-				<p class="lh-lg">Search for a fact by free text query:</p> <pre class="border p-2 request"><a class="text-reset" href="/api/search/query/:query">/api/search/query/:query</a></pre> </div>
-			<div>
-				<p class="lh-lg">Search for a fact by ID:</p> <pre class="border p-2 request"><a class="text-reset" href="/api/search/query/:id">/api/search/id/:id</a></pre> </div>
-		</section>
-		<section>
-			<h3 class="text-primary fs-1 mt-5 mb-3">Example Response</h3>
-			<div> <pre class="border p-2"><%= randomFact %></pre> </div>
-		</section>
-		<br>
-		<footer>
-			<div class="container pt-5 pb-5">
-				<div class="text-center p-3"> <img src="/OceanFactsPixel.png" class="footerImg"/> </div> <small>
-            <p><span class="fw-bold">Disclaimer: </span>While most information from this website comes from scientific, academic, and government sources, this website and its creator(s) are not legally responsible for the truthfulness and reliability of the information on this website.</p>
-          </small> </div>
-		</footer>
-    <br>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="/script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+  </body>
 </html>
