@@ -21,6 +21,11 @@ h1, h2, h3, h4, h5 {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
+.footerImg {
+  width: 30%;
+  height: 30%;
+}
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(0px, -1px, 0);
