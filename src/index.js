@@ -15,7 +15,7 @@ const app = express();
 
 // register ejs
 app.engine("ejs", ejs.renderFile);
-app.set("view engine", ejs);
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // register body parser
