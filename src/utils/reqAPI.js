@@ -12,13 +12,13 @@ const random = async () => {
 }
 
 const randomCategory = async (categories) => {
-  let results = await Fact.find({ categories });
+  let results = await Fact.find({ category: categories });
   if (results.length === 0) {
     results[0] = { success: false, value: "No results found!" };
     return results[0];
   } else {
     const randomResult = randomNum.uniformInt((min = 0), (max = results.length));
-    return results[randomResult];
+    return results[randomResult()];
   }
 }
 
