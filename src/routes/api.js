@@ -29,6 +29,6 @@ app.get("/search/query/:query" , async (req, res) => {
 app.get("/search/id/:id", async (req, res) => {
   const { id } = req.params;
   const searchIDPost = await reqAPI.searchID(id);
-  if (!searchIdPost || !searchIDPost.success) res.status(404);
+  if (!searchIDPost || !searchIDPost.success) res.status(404);
   res.json(searchIDPost);
 });
