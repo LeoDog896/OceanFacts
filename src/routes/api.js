@@ -32,3 +32,8 @@ app.get("/search/id/:id", async (req, res) => {
   if (!searchIDPost || !searchIDPost.success) res.status(404);
   res.json(searchIDPost);
 });
+
+app.all("*", (req, res) => {
+  res.status(404);
+  res.json({success: false, value: "Endpoint not found!"});
+})
