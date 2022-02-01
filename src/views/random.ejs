@@ -45,16 +45,22 @@
         <a href="/" class="btn btn-outline-primary"><i class="fas fa-home"></i> Go Home</a>
       </div>
     </div>
-    <div class="toast align-items-center text-white bg-primary border-0 position-absolute top-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
+    <div class="toast align-items-center text-white bg-primary border-0 position-absolute top-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+      <div>
         <div class="toast-body">
-          Link copied to clipboard.
+        <div class="d-flex">
+          Link copied to clipboard. QR code below.
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          <div id="qrcode" class="d-flex justify-content-center align-items-center m-2">
+          </div>
+        </div>
+        
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/qrcode.min.js"></script>
     <script src="/etc.js"></script>
   </body>
 </html>
