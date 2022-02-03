@@ -31,11 +31,10 @@
 	}
 
 	let currentFact: IndexedFact = grabHash()
-	$: history.pushState({}, "", "#" + currentFact.index)
 </script>
 <Tailwindcss/>
 
-<svelte:window on:popstate={grabHash}/>
+<svelte:window on:popstate={() => currentFact = grabHash()}/>
 <main class="fixed text-center text-sky-900 text-2xl top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
 	<p class="border-b-2 border-sky-500 py-4 text-shadow-sm">{currentFact.fact.value}</p>
 	<div class="my-5">
@@ -43,5 +42,8 @@
 			<span class="text-sm max-w-min px-3 py-2 rounded-md bg-slate-700 mx-5 text-white shadow-md">{category}</span>
 		{/each}
 	</div>
-	<button class="bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 active:bg-sky-700 px-5 py-2 text-lg leading-5 rounded-full font-semibold text-white shadow-md hover:shadow-lg focus:shadow-sm" on:click={() => currentFact = randomFact()}>New Random Ocean Fact</button>
+	<button class="bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 active:bg-sky-700 px-5 py-2 text-lg leading-5 rounded-full font-semibold text-white shadow-md hover:shadow-lg focus:shadow-sm" on:click={() => {
+		currentFact = randomFact()
+		history.pushState({}, "", "#" + currentFact.index)
+	}}>New Random Ocean Fact</button>
 </main>
