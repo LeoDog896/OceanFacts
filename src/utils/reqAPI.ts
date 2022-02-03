@@ -1,32 +1,31 @@
-// npm
-const mongoose = require("mongoose");
-const randomNum = require("random");
+import randomNum from "random";
 
 // local
-const Fact = require("./MongoFact");
+import Fact from "./MongoFact";
 
 const random = async () => {
-  const results = await Fact.find();
-  const randomResult = Math.floor(Math.random() * results.length);
-  return results[randomResult];
+	const results = await Fact.find();
+	const randomResult = Math.floor(Math.random() * results.length);
+	return results[randomResult];
 }
 
 const randomCategory = async (categories) => {
   let results = await Fact.find({ category: categories });
   if (results.length === 0) {
-    results[0] = { success: false, value: "No results found!" };
-    return results[0];
+    return { success: false, value: "No results found!" };
   } else {
-    const randomResult = randomNum.uniformInt((min = 0), (max = results.length));
+    const randomResult = randomNum.uniformInt(0, results.length);
     return results[randomResult()];
   }
 }
 
 const searchQuery = async (query) => {
   let results = await Fact.findOne({ value: new RegExp(query, "i")});
+  
   if (!results) {
-    results = { success: false, value: "No results found!" };
+    return { success: false, value: "No results found!" };
   }
+
   return results;
 }
 
@@ -38,4 +37,4 @@ const searchID = async (id) => {
   return results;
 }
 
-module.exports = { random, randomCategory, searchQuery, searchID };
+export { random, randomCategory, searchQuery, searchID };

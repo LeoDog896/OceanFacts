@@ -24,4 +24,4 @@ const FactSchema = new mongoose.Schema({
   }
 }, { timestamps: true,  collation: { locale: 'en', strength: 2 }, versionKey: false });
 
-module.exports = mongoose.model("Fact", FactSchema);
+export default mongoose.model("Fact", FactSchema);

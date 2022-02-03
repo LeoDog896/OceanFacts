@@ -1,9 +1,9 @@
 // npm
-const express = require("express");
+import express from "express";
 const app = express.Router();
 
 // local
-const reqAPI = require("../utils/reqAPI");
+import * as reqAPI from "../utils/reqAPI";
 
 module.exports = app;
 
@@ -20,20 +20,20 @@ app.get("/random/category/:category", async (req, res) => {
 });
 
 app.get("/search/query/:query" , async (req, res) => {
-  const { query } = req.params;
-  const searchQueryPost = await reqAPI.searchQuery(query);
-  if (!searchQueryPost || !searchQueryPost.success) res.status(404);
-  res.json(searchQueryPost);
+	const { query } = req.params;
+	const searchQueryPost = await reqAPI.searchQuery(query);
+	if (!searchQueryPost || !searchQueryPost.success) res.status(404);
+	res.json(searchQueryPost);
 });
 
 app.get("/search/id/:id", async (req, res) => {
-  const { id } = req.params;
-  const searchIDPost = await reqAPI.searchID(id);
-  if (!searchIDPost || !searchIDPost.success) res.status(404);
-  res.json(searchIDPost);
+	const { id } = req.params;
+	const searchIDPost = await reqAPI.searchID(id);
+	if (!searchIDPost || !searchIDPost.success) res.status(404);
+	res.json(searchIDPost);
 });
 
 app.all("*", (req, res) => {
-  res.status(404);
-  res.json({success: false, value: "Endpoint not found!"});
+	res.status(404);
+	res.json({success: false, value: "Endpoint not found!"});
 })

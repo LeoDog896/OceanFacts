@@ -13,4 +13,4 @@
 ## License
 **OceanFacts** is licensed under the [MIT License](https://github.com/willuhm-js/OceanFacts/blob/main/LICENSE)
 
-Made by me!
+Made by LeoDog896! Contact me at LeoDog896#0675

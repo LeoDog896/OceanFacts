@@ -1,14 +1,14 @@
 // npm
-const mongoose = require("mongoose");
-const express = require("express");
-const ejs = require("ejs");
-const path = require("path");
-const bodyParser = require("body-parser");
-const { v4: uuid } = require("uuid");
+import mongoose from "mongoose"
+import express from "express"
+import ejs from "ejs"
+import path from "path"
+import bodyParser from "body-parser";
 
 // local
-const { port, mongo } = require("./config");
-const reqAPI = require("./utils/reqAPI");
+import config from "./config";
+import logger from "./utils/logger"
+import * as reqAPI from "./utils/reqAPI";
 
 // register express app
 const app = express();
@@ -42,4 +42,9 @@ app.get("/fact/:id", async (req, res) => {
   res.render("fact.ejs", { idFact });
 })
 
-mongoose.connect(mongo).then(() => app.listen(port, () => console.log("App started 8080")));
+if (config.mongo) {
+	mongoose.connect(config.mongo)
+} else {
+	logger.warn("No mongo connection found")
+}
+app.listen(config.port, () => logger.info(`App started at port ${config.port}`));
