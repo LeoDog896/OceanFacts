@@ -1,4 +1,4 @@
-# OceanFacts
+# CoolOceanFacts
 <div class="mb-3 text-center">
   <img alt="Depfu" src="https://img.shields.io/depfu/willuhm-js/OceanFacts?color=blue&style=for-the-badge" class="mb-1" />
           <!--<a href="https://github.com/willuhm-js/OceanFacts/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/willuhm-js/OceanFacts?logoColor=black&style=for-the-badge&color=blue" class="mb-1" /></a>-->
@@ -12,3 +12,5 @@
 
 ## License
 **OceanFacts** is licensed under the [MIT License](https://github.com/willuhm-js/OceanFacts/blob/main/LICENSE)
+
+Made by me!
