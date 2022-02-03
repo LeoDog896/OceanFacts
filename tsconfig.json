@@ -1,12 +1,6 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"esModuleInterop": true,
-		"target": "es6",
-		"moduleResolution": "node",
-		"sourceMap": true,
-		"outDir": "dist"
-	},
-	"lib": ["es2015"],
-	"include": ["src/**/*"],
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }
