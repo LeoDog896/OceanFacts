@@ -2,32 +2,44 @@
 	import Tailwindcss from "./Tailwindcss.svelte"
 	import { data, Fact } from "./data"
 
+	interface IndexedFact {
+		index: number,
+		fact: Fact
+	}
+
 	/**
 	 * Retrieve a random piece of data from the [data] array
 	 */
-	const randomFact = (): [Fact, number] => {
+	const randomFact = (): IndexedFact => {
 		const index = Math.floor(Math.random() * data.length)
 
-		return [data[index], index];
+		return { index, fact: data[index] }
 	}
 
 	const getHash = (): number | null => {
-		try {
-			return parseInt(location.hash.substring(1))
-		} catch (e) {
-			return null
-		}
+		const int = parseInt(location.hash.substring(1))
+
+		if (Number.isNaN(int)) return null
+
+		return int;
 	}
 
-	let currentFact: [Fact, number] = getHash() != null ? [data[getHash()], getHash()] : randomFact()
-	$: location.hash = currentFact[1]
-</script>
+	const grabHash = (): IndexedFact => {
+		const hashNumber = getHash()
 
+		return hashNumber != null ? { index: hashNumber, fact: data[hashNumber] } : randomFact()
+	}
+
+	let currentFact: IndexedFact = grabHash()
+	$: history.pushState({}, "", "#" + currentFact.index)
+</script>
 <Tailwindcss/>
+
+<svelte:window on:popstate={grabHash}/>
 <main class="fixed text-center text-sky-900 text-2xl top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
-	<p class="border-b-2 border-sky-500 py-4 text-shadow-sm">{currentFact[0].value}</p>
+	<p class="border-b-2 border-sky-500 py-4 text-shadow-sm">{currentFact.fact.value}</p>
 	<div class="my-5">
-		{#each currentFact[0].categories as category}
+		{#each currentFact.fact.categories as category}
 			<span class="text-sm max-w-min px-3 py-2 rounded-md bg-slate-700 mx-5 text-white shadow-md">{category}</span>
 		{/each}
 	</div>
