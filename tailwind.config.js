@@ -8,6 +8,9 @@ module.exports = {
 	  './public/index.html',
 	],
 	theme: {
+	  fontFamily: {
+		  thin: '"Raleway", sans-serif'
+	  },
 	  extend: {
 		colors: {
 		  svelte: '#ff3e00',
